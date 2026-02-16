@@ -1,344 +1,89 @@
-/*
- * מרכז נשמה / חושן יהודה — CRM Theme
- * ====================================
- * Color Palette (from logo):
- *   Deep Teal:    #0F4C5C  (primary)
- *   Golden Orange: #C8842B  (accent)
- *   Warm Cream:   #FAF7F2  (background)
- *   Dark Slate:   #1A2E3B  (text)
- */
+/* === חושן יהודה CRM — Brand Theme ===
+   כחול כהה: #04557a | כחול בהיר: #1a74a4
+   זהב-כתום: #eba064 | כתום-אדום: #ca553b
+*/
 
-/* ── Global CSS Variables ────────────────────────────────────── */
 :root {
-  /* Primary palette — deep teal */
-  --project-color: #0F4C5C !important;
-  --primary: #0F4C5C !important;
-  --primary-alt: #0D3F4D !important;
-  --primary-10: rgba(15, 76, 92, 0.1) !important;
-  --primary-25: rgba(15, 76, 92, 0.25) !important;
-  --primary-50: rgba(15, 76, 92, 0.5) !important;
-  --primary-75: rgba(15, 76, 92, 0.75) !important;
-  --primary-90: rgba(15, 76, 92, 0.9) !important;
-
-  /* Secondary — golden orange */
-  --secondary: #C8842B !important;
-  --secondary-10: rgba(200, 132, 43, 0.1) !important;
-  --secondary-25: rgba(200, 132, 43, 0.25) !important;
-  --secondary-50: rgba(200, 132, 43, 0.5) !important;
-
-  /* Semantic colors */
-  --success: #2D8659 !important;
-  --warning: #D4922A !important;
-  --danger: #B94444 !important;
-
-  /* Background tones — warm cream */
-  --background-page: #FAF7F2 !important;
-  --background-normal: #F0EBE3 !important;
-  --background-highlight: #E8E2D8 !important;
-  --background-subdued: #F5F1EB !important;
-  --background-normal-alt: #EDE7DE !important;
-
-  /* Foreground */
-  --foreground-normal: #1A2E3B !important;
-  --foreground-subdued: #5A6B78 !important;
-  --foreground-inverted: #FAF7F2 !important;
-
-  /* Borders — softer */
-  --border-normal: #D6CEBC !important;
-  --border-subdued: #E3DCD0 !important;
-  --border-width: 1px !important;
-
-  /* Module navigation sidebar — deep teal */
-  --module-background: #0A3540 !important;
-  --module-icon: #A0C4CC !important;
-  --module-background-alt: #0F4C5C !important;
+  --project-color: #04557a !important;
+  --primary: #04557a !important;
+  --primary-alt: #1a74a4 !important;
+  --v-button-background-color: #04557a !important;
+  --v-button-background-color-hover: #1a74a4 !important;
+  --background-page: #FAFAF8 !important;
+  --background-normal: #F0F0EC !important;
+  --background-normal-alt: #E6E6E0 !important;
+  --foreground-normal: #1a2a35 !important;
+  --sidebar-detail-color-active: #eba064 !important;
 }
 
-/* ── Module Bar (left sidebar icons) ─────────────────────────── */
-#navigation .module-bar,
-.module-bar {
-  background-color: #0A3540 !important;
+/* Sidebar */
+.module-bar, #navigation {
+  background-color: #04557a !important;
+}
+.module-bar .v-list-item.active,
+.module-bar .v-list-item:hover {
+  background-color: #1a74a4 !important;
+}
+#navigation .module-nav-content {
+  background-color: #033d58 !important;
 }
 
-.module-bar .v-icon {
-  color: #8FB8C4 !important;
+/* Active items — gold accent */
+.v-list-item.active .v-list-item__content,
+.v-list-item.active .v-icon {
+  color: #eba064 !important;
 }
 
-.module-bar .v-icon:hover,
-.module-bar .v-icon.router-link-active {
-  color: #E8A840 !important;
-}
-
-.module-bar-logo .custom-logo img,
-.module-bar-logo .default-logo {
-  filter: brightness(0) invert(1) !important;
-}
-
-/* ── Navigation Sidebar ──────────────────────────────────────── */
-#navigation .module-nav {
-  background-color: #FFFFFF !important;
-  border-left: 1px solid #E3DCD0 !important;
-}
-
-/* ── Header Bar ──────────────────────────────────────────────── */
+/* Header bar accent */
 .header-bar {
-  background-color: #FFFFFF !important;
-  border-bottom: 2px solid #0F4C5C !important;
+  border-bottom: 3px solid #eba064 !important;
 }
 
-.header-bar .title .type-title {
-  color: #1A2E3B !important;
-  font-weight: 700 !important;
+/* Table styling */
+.v-table .table-row:hover td {
+  background-color: rgba(4, 85, 122, 0.06) !important;
 }
-
-/* ── Buttons — primary teal, hover gold ──────────────────────── */
-.v-button.primary,
-.v-button[kind="primary"] {
-  --v-button-background-color: #0F4C5C !important;
-  --v-button-background-color-hover: #C8842B !important;
-  --v-button-color: #FFFFFF !important;
-  --v-button-color-hover: #FFFFFF !important;
-}
-
-.v-button.secondary,
-.v-button[kind="secondary"] {
-  --v-button-background-color: #C8842B !important;
-  --v-button-background-color-hover: #A06820 !important;
-  --v-button-color: #FFFFFF !important;
-}
-
-/* ── Tables / Data Grids — comfortable view ──────────────────── */
-.v-table .table-row {
-  border-bottom: 1px solid #E3DCD0 !important;
-}
-
-.v-table .table-row:nth-child(even) {
-  background-color: #FAF7F2 !important;
-}
-
-.v-table .table-row:nth-child(odd) {
-  background-color: #FFFFFF !important;
-}
-
-.v-table .table-row:hover {
-  background-color: #E8E2D8 !important;
-}
-
-/* Larger row height for comfort */
-.v-table .table-row td {
-  padding-top: 12px !important;
-  padding-bottom: 12px !important;
-}
-
-/* Column headers — teal background */
 .v-table .table-header {
-  background-color: #0F4C5C !important;
-  color: #FFFFFF !important;
-  font-weight: 600 !important;
+  background-color: #F0F0EC !important;
+  font-weight: 700 !important;
+  color: #04557a !important;
 }
 
-.v-table .table-header .cell-content {
-  color: #FFFFFF !important;
-}
-
-.v-table .table-header .v-icon {
-  color: #A0C4CC !important;
-}
-
-/* ── Cards Layout ────────────────────────────────────────────── */
-.layout-cards .card {
-  border: 1px solid #D6CEBC !important;
+/* Cards */
+.v-card {
   border-radius: 8px !important;
-  box-shadow: 0 1px 3px rgba(15, 76, 92, 0.08) !important;
-  transition: box-shadow 0.2s ease, border-color 0.2s ease !important;
+  box-shadow: 0 1px 3px rgba(4, 85, 122, 0.12) !important;
 }
 
-.layout-cards .card:hover {
-  border-color: #C8842B !important;
-  box-shadow: 0 4px 12px rgba(200, 132, 43, 0.15) !important;
+/* Primary buttons */
+.v-button.primary, .v-button--primary {
+  background-color: #04557a !important;
+}
+.v-button.primary:hover {
+  background-color: #1a74a4 !important;
 }
 
-/* ── Detail / Form Pages ─────────────────────────────────────── */
-.detail-item .field-label {
-  color: #0F4C5C !important;
-  font-weight: 600 !important;
+/* Secondary/warning buttons — orange */
+.v-button.secondary {
+  color: #ca553b !important;
+  border-color: #ca553b !important;
 }
 
-.v-form .field .interface .input {
-  border-color: #D6CEBC !important;
-}
-
-.v-form .field .interface .input:focus-within {
-  border-color: #C8842B !important;
-  box-shadow: 0 0 0 2px rgba(200, 132, 43, 0.2) !important;
-}
-
-/* ── Sidebar Detail Panel ────────────────────────────────────── */
-.sidebar-detail {
-  border-right: 1px solid #E3DCD0 !important;
-}
-
-.sidebar-detail .title {
-  color: #0F4C5C !important;
-}
-
-/* ── Dashboard Panels ────────────────────────────────────────── */
+/* Dashboard panels */
 .panel-header {
-  background: linear-gradient(135deg, #0F4C5C 0%, #1A6B7A 100%) !important;
-  color: #FFFFFF !important;
-  border-radius: 8px 8px 0 0 !important;
-}
-
-.panel {
-  border: 1px solid #D6CEBC !important;
-  border-radius: 8px !important;
-  box-shadow: 0 1px 4px rgba(15, 76, 92, 0.06) !important;
-}
-
-/* ── Tags / Chips ────────────────────────────────────────────── */
-.v-chip {
-  border-radius: 16px !important;
-}
-
-.v-chip.primary {
-  background-color: rgba(15, 76, 92, 0.12) !important;
-  color: #0F4C5C !important;
-}
-
-/* ── Scrollbar Styling ───────────────────────────────────────── */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #F0EBE3;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #B0A898;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #0F4C5C;
-}
-
-/* ── Tabs ────────────────────────────────────────────────────── */
-.v-tabs .v-tab.active {
-  color: #0F4C5C !important;
-  border-bottom-color: #C8842B !important;
-}
-
-/* ── Drawer (right panel) ────────────────────────────────────── */
-.drawer {
-  background-color: #FFFFFF !important;
-  border-right: 2px solid #0F4C5C !important;
-}
-
-/* ── Notifications / Toasts ──────────────────────────────────── */
-.v-notice.normal {
-  border-color: #0F4C5C !important;
-}
-
-/* ── Collection Listing — improved spacing ───────────────────── */
-.content .layout {
-  padding: 16px 24px !important;
-}
-
-/* ── Search Box ──────────────────────────────────────────────── */
-.search-input .input {
-  border-radius: 8px !important;
-  border: 1px solid #D6CEBC !important;
-}
-
-.search-input .input:focus-within {
-  border-color: #0F4C5C !important;
-  box-shadow: 0 0 0 2px rgba(15, 76, 92, 0.15) !important;
-}
-
-/* ── Login Page Branding ─────────────────────────────────────── */
-#app .public-view .container .content {
-  background-color: #FFFFFF !important;
-  border: 1px solid #D6CEBC !important;
-  border-radius: 12px !important;
-  box-shadow: 0 8px 32px rgba(15, 76, 92, 0.12) !important;
-}
-
-.public-view {
-  background: linear-gradient(135deg, #0A3540 0%, #0F4C5C 40%, #1A6B7A 100%) !important;
-}
-
-.public-view .project-name {
-  color: #0F4C5C !important;
-  font-size: 1.5rem !important;
+  color: #04557a !important;
   font-weight: 700 !important;
 }
 
-/* ── RTL Enhancements ────────────────────────────────────────── */
-html[dir="rtl"] .v-table .table-row td,
-html[dir="rtl"] .v-table .table-header th {
-  text-align: right !important;
-}
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #FAFAF8; }
+::-webkit-scrollbar-thumb { background: #04557a; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #1a74a4; }
 
-html[dir="rtl"] .header-bar .title {
-  text-align: right !important;
-}
+/* Login page */
+.public-view { background: linear-gradient(135deg, #04557a, #1a74a4) !important; }
+.public-view .v-card { background-color: #FAFAF8 !important; }
+.public-view h1 { color: #eba064 !important; }
 
-/* ── Financial Data — number formatting ──────────────────────── */
-.interface-input-hash-masked .input,
-[data-collection="transactions"] .v-table td:nth-child(n),
-[data-collection="receipts"] .v-table td:nth-child(n) {
-  font-variant-numeric: tabular-nums !important;
-  font-feature-settings: "tnum" 1 !important;
-}
-
-/* ── Status Indicators ───────────────────────────────────────── */
-.status-dot.active,
-.status-dot.published {
-  background-color: #2D8659 !important;
-}
-
-.status-dot.draft {
-  background-color: #D4922A !important;
-}
-
-.status-dot.archived {
-  background-color: #8A8A8A !important;
-}
-
-/* ── Tooltip / Popover ───────────────────────────────────────── */
-.v-menu-popper {
-  border: 1px solid #D6CEBC !important;
-  border-radius: 8px !important;
-  box-shadow: 0 4px 16px rgba(15, 76, 92, 0.1) !important;
-}
-
-/* ── Empty State ─────────────────────────────────────────────── */
-.v-info .v-icon {
-  color: #C8842B !important;
-}
-
-/* ── Dialog / Modal ──────────────────────────────────────────── */
-.v-dialog .v-card {
-  border-radius: 12px !important;
-  border: 1px solid #D6CEBC !important;
-}
-
-.v-dialog .v-card .v-card-title {
-  background-color: #0F4C5C !important;
-  color: #FFFFFF !important;
-}
-
-/* ── Batch Action Bar ────────────────────────────────────────── */
-.action-bar {
-  background-color: #0F4C5C !important;
-  color: #FFFFFF !important;
-  border-radius: 8px !important;
-}
-
-/* ── Bookmark Navigation ─────────────────────────────────────── */
-.bookmark .v-icon {
-  color: #C8842B !important;
-}
+/* === End Brand Theme === */
